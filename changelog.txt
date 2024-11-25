@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.0.2
+Date: 2024-11-25
+  Changes:
+    - Add Vibrant train colors mod into optional dependencies.
+  Bugfixes:
+    - Fix crash if cybersyn was not installed.
+
+---------------------------------------------------------------------------------------------------
 Version: 0.0.1
 Date: 2024-11-25
   Major Features:

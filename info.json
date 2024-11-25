@@ -1,13 +1,14 @@
 {
     "name": "color_whole_train",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Color whole train",
     "author": "CaptainHook",
     "factorio_version": "2.0",
     "description": "Colors all train wagons, not only locomotives, based on the destination train stop. Works with cybersyn.",
     "dependencies": [
         "base",
-        "cybersyn >= 2.0.11",
-        "? FluidWagonColorMask >= 2.0.0"
+        "? cybersyn >= 2.0.11",
+        "? FluidWagonColorMask >= 2.0.0",
+        "? vibrant-train-colors >= 1.1.0"
     ]
 }
