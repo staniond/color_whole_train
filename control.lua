@@ -109,7 +109,7 @@ function on_train_changed_state(event)
         return -- handle only train_left_station events
     end
 
-    if script.active_mods["cybersyn"] ~= nil and is_cybersyn_train(train.id) then
+    if script.active_mods["cybersyn"] and is_cybersyn_train(train.id) then
         return -- let cybersyn code handle cybersyn trains
     end
 
@@ -128,7 +128,7 @@ end
 
 --------------------event handler registering-----------------------
 
-if script.active_mods["cybersyn"] ~= nil then
+if script.active_mods["cybersyn"] then
     script.on_init(register_cybersyn_on_train_status_changed)
     script.on_load(register_cybersyn_on_train_status_changed)
 end
