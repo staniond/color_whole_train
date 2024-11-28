@@ -113,6 +113,9 @@ function on_train_changed_state(event)
         return -- let cybersyn code handle cybersyn trains
     end
 
+    if not train.schedule then
+        return -- train might happen if stations are renamed
+    end
     local next_station_name = train.schedule.records[train.schedule.current].station
     if not next_station_name then
         return -- station name nil, cannot color (probably a temporary stop)
