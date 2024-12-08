@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+Date: 2024-12-08
+  Changes:
+    - Rewrite of the mod.
+    - Should now work with most train mods out of the box
+    - UPS impact made almost zero (now copying color from locomotive, not iterating through all stations by name
+    - Side effect is that wagon color is no longer reset on default station color
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2024-11-28
   Bugfixes:
