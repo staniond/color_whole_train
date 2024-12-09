@@ -19,9 +19,9 @@ Vanilla fluid wagons cannot be colored. (it is an optional dependency if you do 
 
 ## Mod compatiblity
 
+- works well with the 'Project Cybersyn' mod (recolors train even when new order is received out of depot and when going to a refueler).
 - works well with the 'Vibrant Train Colors' if you like, well, more vibrant train colors.
 - works well with the 'Train Trails' mod.
-- works well with the 'Project Cybersyn' mod.
 - should work out of the box with most other train mods (if not, notify me)
 
 ## Note
