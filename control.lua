@@ -30,16 +30,10 @@ function get_new_color(train)
     return nil
 end
 
---- Colors wagons of this train to the color of next station,
---- if at least one locomotive of this train has the
---- 'copy_color_from_train_stop' set. The color is copied from
---- such a locomotive.
+--- Colors all train wagons to the given color.
 ---@param train LuaTrain
-function color_train_if_set(train)
-    local new_color = get_new_color(train)
-    if not new_color then
-        return
-    end
+---@param new_color Color
+function color_wagons(train, new_color)
 
 	for _, wagon in ipairs(train.cargo_wagons) do
         wagon.color = new_color
@@ -47,6 +41,18 @@ function color_train_if_set(train)
 	for _, wagon in ipairs(train.fluid_wagons) do
         wagon.color = new_color
 	end
+end
+
+--- Colors wagons of this train to the color of next station,
+--- if at least one locomotive of this train has the
+--- 'copy_color_from_train_stop' set. The color is copied from
+--- such a locomotive.
+---@param train LuaTrain
+function color_train_if_set(train)
+    local new_color = get_new_color(train)
+    if new_color then
+        color_wagons(train, new_color)
+    end
 end
 
 --------------------cybersyn trains handling-----------------------
@@ -100,9 +106,26 @@ function on_train_changed_state(event)
     color_train_if_set(train)
 end
 
+--------------------manual color change handling-----------------------
 
+function on_locomotive_color_changed(event)
+    if event.entity.type ~= "locomotive" then
+        return -- handle only locomotives
+    end
+
+    local train = event.entity.train
+    local color = event.entity.color
+    if train and color then
+        color_wagons(train, color)
+    end
+end
+
+-- Register events for cybersyn trains if the mod is active
 if script.active_mods["cybersyn"] then
     script.on_init(register_cybersyn_on_train_status_changed)
     script.on_load(register_cybersyn_on_train_status_changed)
 end
+-- Register events for recoloring vagons if any loco has color_by_stop set
 script.on_event(defines.events.on_train_changed_state, on_train_changed_state)
+-- Register events for recoloring vagons if loco changed color
+script.on_event(defines.events.on_entity_color_changed, on_locomotive_color_changed)

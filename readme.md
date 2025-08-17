@@ -1,12 +1,15 @@
 # Color whole train
 
 **Color the whole train by the destination train stop color, not just the locomotives!**
+**Manually changing locomotive color will also color all wagons!**
 
 This mod colors all the train carriages with the color of the stop this train is currently going to.
 This behaves the same way as the 'Use destination train stop color' setting in locomotives, but
 colors the whole train.
 
 This mod colors the train if **at least one** locomotive has this setting on. Otherwise it does not touch the train.
+
+Manually changing locomotive color will also color all wagons. The wagons will be recolored based on next station again if any locomotive has this setting enabled. If you just want to keep the color based on the locomotive, untick the 'Use destination train stop color' setting for all locomotives of the train.
 
 It should be safe to add/remove this mod from any save.
 

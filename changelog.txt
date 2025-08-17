@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+Date: 2025-08-17
+  Features:
+    - Manually changing locomotive color now colors all wagons of the train (wagons will be recolored based on next station again if any locomotive has this setting enabled).
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
 Date: 2024-12-09
   Bugfixes:
