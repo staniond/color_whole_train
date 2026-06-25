@@ -1,9 +1,9 @@
 {
     "name": "color_whole_train",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "title": "Color whole train",
     "author": "CaptainHook",
-    "factorio_version": "2.0",
+    "factorio_version": "2.1",
     "description": "Colors all train wagons, not only locomotives, based on the destination train stop.",
     "dependencies": [
         "base",
